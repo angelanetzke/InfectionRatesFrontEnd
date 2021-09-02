@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Current Covid-19 Infection Rates</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script>
+        console.log("lalalala");
+        const url = "http://127.0.0.1:2345/infectionrates";
+        d3.json(url).then(
+            json => {
+                document.getElementById("map").innerHTML=json[0]['state'];
+            }
+        );
+    </script>
+</head>
+<body>
+
+<div id="map"></div>
+
+</body>
+</html>
