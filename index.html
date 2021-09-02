@@ -6,10 +6,14 @@
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <script>
         window.onload = function() {
+            const data = [ ["CA", "blue"], ["AK", "red"]];
             const url = "http://127.0.0.1:2345/infectionrates";
             const svg = d3.select("svg");
-            svg.select("#CA")
-                .style("fill", "blue");
+            for (let thisState of data) {
+                let thisStateName = thisState[0];
+                svg.select(`#${thisStateName}`)
+                .style("fill", thisState[1]);
+            }
         }
     </script>
 </head>
